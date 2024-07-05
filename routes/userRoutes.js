@@ -1,0 +1,11 @@
+const express=require('express')
+const userController=require('../controllers/userController')
+const router=express.Router()
+router.get('/validate-token',userController.validateToken)
+router.post('/signup',userController.createAccount)
+router.post('/login',userController.loginUser)
+router.get('/get-code',userController.createVerificationCode)
+router.patch('/send-code',userController.checkVerificationAccount)
+router.patch('/reset-password',userController.resetPassword)
+router.patch('/update-password',userController.updatePassword)
+module.exports=router
